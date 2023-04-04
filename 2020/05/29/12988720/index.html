@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,viewport-fit=cover"><title>docker常用命令总结 - Wshile - 博客园 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="docker常用命令总结 docker run -d, --detach&#x3D;false">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker常用命令总结 - Wshile - 博客园">
+<meta property="og:url" content="https://hldad.github.io/2020/05/29/12988720/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="docker常用命令总结 docker run -d, --detach&#x3D;false">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2020-05-29T01:38:00.000Z">
+<meta property="article:modified_time" content="2023-04-04T15:50:09.263Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hldad.github.io/2020/05/29/12988720/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'docker常用命令总结 - Wshile - 博客园',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-04 23:50:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">docker常用命令总结 - Wshile - 博客园</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-05-29T01:38:00.000Z" title="Created 2020-05-29 09:38:00">2020-05-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-04-04T15:50:09.263Z" title="Updated 2023-04-04 23:50:09">2023-04-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="docker常用命令总结 - Wshile - 博客园"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="docker常用命令总结"><a href="#docker常用命令总结" class="headerlink" title="docker常用命令总结"></a>docker常用命令总结</h1><h2 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">-d, --detach=false # 后台运行容器，并返回容器ID；</span><br><span class="line">-i, --interactive=false # 以交互模式运行容器，通常与 -t 同时使用；</span><br><span class="line">-t, --tty=false # 为容器重新分配一个伪输入终端，通常与 -i 同时使用；</span><br><span class="line">-u, --user=&quot;&quot; # 指定容器的用户</span><br><span class="line">-a, --attach=[] # 登录容器（必须是以docker run -d启动的容器）</span><br><span class="line">-w, --workdir=&quot;&quot; # 指定容器的工作目录</span><br><span class="line">-c, --cpu-shares=0 # 设置容器CPU权重，在CPU共享场景使用</span><br><span class="line">-e, --env=[] # 指定环境变量，容器中可以使用该环境变量</span><br><span class="line">-m, --memory=&quot;&quot; # 指定容器的内存上限</span><br><span class="line">-P, --publish-all=false # 指定容器暴露的端口</span><br><span class="line">-p, --publish=[] # 指定容器暴露的端口</span><br><span class="line">-h, --hostname=&quot;&quot; # 指定容器的主机名</span><br><span class="line">-v, --volume=[] # 给容器挂载存储卷，挂载到容器的某个目录</span><br><span class="line">--volumes-from=[] # 给容器挂载其他容器上的卷，挂载到容器的某个目录</span><br><span class="line">--cap-add=[] # 添加权限，权限清单详见：http://linux.die.net/man/7/capabilities</span><br><span class="line">--cap-drop=[] # 删除权限，权限清单详见：http://linux.die.net/man/7/capabilities</span><br><span class="line">--cidfile=&quot;&quot; # 运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法</span><br><span class="line">--cpuset=&quot;&quot; # 设置容器可以使用哪些CPU，此参数可以用来容器独占CPU</span><br><span class="line">--device=[] # 添加主机设备给容器，相当于设备直通</span><br><span class="line">--dns=[] # 指定容器的dns服务器</span><br><span class="line">--dns-search=[] # 指定容器的dns搜索域名，写入到容器的/etc/resolv.conf文件</span><br><span class="line">--entrypoint=&quot;&quot; # 覆盖image的入口点</span><br><span class="line">--env-file=[] # 指定环境变量文件，文件格式为每行一个环境变量</span><br><span class="line">--expose=[] # 指定容器暴露的端口，即修改镜像的暴露端口</span><br><span class="line">--link=[] # 指定容器间的关联，使用其他容器的IP、env等信息</span><br><span class="line">--lxc-conf=[] # 指定容器的配置文件，只有在指定--exec-driver=lxc时使用</span><br><span class="line">--name=&quot;&quot; # 指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字</span><br><span class="line">--net=&quot;bridge&quot; # 容器网络设置:</span><br><span class="line">    bridge  # 使用docker daemon指定的网桥</span><br><span class="line">    host  # 容器使用主机的网络</span><br><span class="line">    container:NAME_or_ID &gt; # 使用其他容器的网路，共享IP和PORT等网络资源</span><br><span class="line">    none # 容器使用自己的网络（类似--net=bridge），但是不进行配置</span><br><span class="line">--privileged=false # 指定容器是否为特权容器，特权容器拥有所有的capabilities</span><br><span class="line">--restart=&quot;no&quot; # 指定容器停止后的重启策略:</span><br><span class="line">    no # 容器退出时不重启</span><br><span class="line">    on-failure # 容器故障退出（返回值非零）时重启</span><br><span class="line">    always # 容器退出时总是重启</span><br><span class="line">--rm=false # 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)</span><br><span class="line">--sig-proxy=true # 设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理</span><br></pre></td></tr></table></figure>
+
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">使用docker镜像tomcat:latest以后台模式启动一个容器,并将容器命名为mytomcat</span><br><span class="line"></span><br><span class="line">docker run -tid --name mytomcat tomcat:latest</span><br><span class="line"></span><br><span class="line">使用镜像tomcat:latest以后台模式启动一个容器,并将容器的8080端口映射到宿主机的8080端口</span><br><span class="line"></span><br><span class="line">docker run -tid --name mytomcat -p 8080:8080 tomcat:latest</span><br><span class="line"></span><br><span class="line">使用镜像tomcat:latest以后台模式启动一个容器,并将容器的8080端口映射到宿主机的8080端口,主机的目录 /home 映射到容器的 /home</span><br><span class="line"></span><br><span class="line">容器暴露80端口，并指定宿主机80端口与其通信(之前是宿主机端口，之后是容器需暴露的端口)</span><br><span class="line">docker run -d --name=ubuntu_server -p 80:80 ubuntu:latest</span><br><span class="line"></span><br><span class="line">指定容器内目录与宿主机目录共享(之前是宿主机文件夹，之后是容器需共享的文件夹)，</span><br><span class="line">docker run -d --name=ubuntu_server -v /etc/www:/var/www ubuntu:latest</span><br><span class="line"></span><br><span class="line">指定bridge网桥</span><br><span class="line">docker run -it --net=my_bridge nginx</span><br></pre></td></tr></table></figure>
+
+<h2 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">docker create #  创建一个容器但是不启动它</span><br><span class="line">docker run #  创建并启动一个容器</span><br><span class="line">docker stop #  停止容器运行，发送信号 SIGTERM</span><br><span class="line">docker kill # 强制终止一个容器</span><br><span class="line">docker start #  启动一个停止状态的容器</span><br><span class="line">docker restart #  重启一个容器</span><br><span class="line">docker rmi #  删除一个容器</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line">docker kill #  发送信号给容器，默认 SIGKILL</span><br><span class="line">docker attach #  连接 ( 进入 ) 到一个正在运行的容器</span><br><span class="line">docker wait #  阻塞到一个容器，直到容器停止运行</span><br><span class="line">docker --restart=always # 容器关闭之后自动启动</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取容器信息"><a href="#获取容器信息" class="headerlink" title="获取容器信息"></a>获取容器信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker ps #  显示状态为运行（ Up ）的容器</span><br><span class="line">docker ps -a #  显示所有容器 , 包括运行中（ Up ）的和退出的 (Exited)</span><br><span class="line">docker inspect #  深入容器内部获取容器所有信息</span><br><span class="line">docker logs -f #  查看容器的日志 (stdout/stderr) (-f 用于实时输出 )</span><br><span class="line">docker events #  得到 docker 服务器的实时的事件</span><br><span class="line">docker port #  显示容器的端口映射</span><br><span class="line">docker top #  显示容器的进程信息</span><br><span class="line">docker diff #  显示容器文件系统的前后变化</span><br></pre></td></tr></table></figure>
+
+<h2 id="导出容器"><a href="#导出容器" class="headerlink" title="导出容器"></a>导出容器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker cp #  从容器里向外拷贝文件或目录</span><br><span class="line">docker export containe_id &gt;export.tar #  将容器整个文件系统导出为一个 tar 包，不带 layers 、 tag 等信息</span><br><span class="line">docker export container_id &gt;export.tar # 导出容器保存到本地并命名为 export.tar</span><br><span class="line">cat export.tar | docker import - imported:container # 导入本地 tar 包作为一个镜像</span><br><span class="line">docker import url res:tag # 导入网络的容器作为一个镜像</span><br></pre></td></tr></table></figure>
+
+<h2 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker images #  显示本地所有的镜像列表</span><br><span class="line">docker import #  从一个 tar 包创建一个镜像，往往和 export 结合使用</span><br><span class="line">docker build #  使用 Dockerfile 创建镜像（推荐）</span><br><span class="line">docker commit #  从容器创建镜像</span><br><span class="line">docker rmi #  删除一个镜像</span><br><span class="line">docker load #  从一个 tar 包创建一个镜像，和 save 配合使用</span><br><span class="line">docker save #  将一个镜像保存为一个 tar 包，带 layers 和 tag 信息</span><br><span class="line">docker history #  显示生成一个镜像的历史命令</span><br><span class="line">docker tag #  为镜像起一个别名</span><br></pre></td></tr></table></figure>
+
+<h2 id="镜像仓库-registry-操作"><a href="#镜像仓库-registry-操作" class="headerlink" title="镜像仓库 (registry) 操作"></a>镜像仓库 (registry) 操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">docker login #  登录到一个 registry</span><br><span class="line">docker search #  从 registry 仓库搜索镜像</span><br><span class="line">docker pull #  从仓库下载镜像到本地</span><br><span class="line">docker push #  将一个镜像 push 到 registry 仓库中</span><br><span class="line"># 获取 Container IP 地址（ Container 状态必须是 Up ）</span><br><span class="line">docker inspect id | grep IPAddress | cut -d &#x27;&quot;&#x27; -f 4</span><br><span class="line"># 获取端口映射</span><br><span class="line">docker inspect -f &#x27;&#123;&#123;range $p, $conf := .NetworkSettings.Ports&#125;&#125; &#123;&#123;$p&#125;&#125; -&gt; &#123;&#123;(index $conf 0).HostPort&#125;&#125; &#123;&#123;end&#125;&#125;&#x27; id</span><br><span class="line"># 获取环境变量</span><br><span class="line">docker exec container_id env</span><br><span class="line"># 杀掉所有正在运行的容器</span><br><span class="line">docker kill $(docker ps -q)</span><br><span class="line"># 删除老的 ( 一周前创建 ) 容器</span><br><span class="line">docker ps -a | grep &#x27;weeks ago&#x27; | awk &#x27;&#123;print $1&#125;&#x27; | xargs docker rm</span><br><span class="line"># 删除已经停止的容器</span><br><span class="line">docker rm `docker ps -a -q`</span><br><span class="line"># 删除所有镜像，小心</span><br><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">FROM ,  从一个基础镜像构建新的镜像</span><br><span class="line">FROM ubuntu</span><br><span class="line">MAINTAINER ,  维护者信息</span><br><span class="line">MAINTAINER William</span><br><span class="line">ENV ,  设置环境变量</span><br><span class="line">ENV TEST 1</span><br><span class="line">RUN ,  非交互式运行 shell 命令</span><br><span class="line">RUN apt-get -y update</span><br><span class="line">RUN apt-get -y install nginx</span><br><span class="line">ADD ,  将外部文件拷贝到镜像里 ,src 可以为 url</span><br><span class="line">ADD http://nicescale.com/ /data/nicescale.tgz</span><br><span class="line">WORKDIR /path/to/workdir,  设置工作目录</span><br><span class="line">WORKDIR /var/www</span><br><span class="line">USER ,  设置用户 ID</span><br><span class="line">USER nginx</span><br><span class="line">VULUME ,  设置 volume</span><br><span class="line">VOLUME [&#x27;/data&#x27;]</span><br><span class="line">EXPOSE ,  暴露哪些端口</span><br><span class="line">EXPOSE 80 443</span><br><span class="line">ENTRYPOINT [&#x27;executable&#x27;, &#x27;param1&#x27;,&#x27;param2&#x27;] 执行命令</span><br><span class="line">ENTRYPOINT [&quot;/usr/sbin/nginx&quot;]</span><br><span class="line">CMD [&quot;param1&quot;,&quot;param2&quot;]</span><br><span class="line">CMD [&quot;start&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>加油，你们是最棒的!</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://hldad.github.io">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://hldad.github.io/2020/05/29/12988720/">https://hldad.github.io/2020/05/29/12988720/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/07/30/125894813/" title="实战 逆向最新黄鸟抓包软件"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">实战 逆向最新黄鸟抓包软件</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">docker常用命令总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-run"><span class="toc-number">1.1.</span> <span class="toc-text">docker run</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">容器操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%AE%B9%E5%99%A8%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.</span> <span class="toc-text">获取容器信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E5%AE%B9%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">导出容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.</span> <span class="toc-text">镜像操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93-registry-%E6%93%8D%E4%BD%9C"><span class="toc-number">1.6.</span> <span class="toc-text">镜像仓库 (registry) 操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile"><span class="toc-number">1.7.</span> <span class="toc-text">Dockerfile</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2023/04/04/hello-world/" title="Hello World">Hello World</a><time datetime="2023-04-04T09:03:21.025Z" title="Created 2023-04-04 17:03:21">2023-04-04</time></div></div><div class="aside-list-item"><div class="content"><a class="title" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_56039202/article/details/125894813" title="实战 逆向最新黄鸟抓包软件">实战 逆向最新黄鸟抓包软件</a><time datetime="2022-07-30T00:48:02.000Z" title="Created 2022-07-30 08:48:02">2022-07-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/05/29/12988720/" title="docker常用命令总结 - Wshile - 博客园">docker常用命令总结 - Wshile - 博客园</a><time datetime="2020-05-29T01:38:00.000Z" title="Created 2020-05-29 09:38:00">2020-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
