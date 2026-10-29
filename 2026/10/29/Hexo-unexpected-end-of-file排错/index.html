@@ -79,6 +79,36 @@
 
 
 
+<script>
+(function () {
+  // 同一套静态产物部署在两个域名：kurtwang.cn（含 www）保留底部备案，
+  // 其他域名（如 isgo.fun）直接从 DOM 中删除备案节点，而非仅 CSS 隐藏。
+  if (/(^|\.)kurtwang\.cn$/i.test(location.hostname)) return;
+
+  function removeBeian(root) {
+    (root || document).querySelectorAll('.beian').forEach(function (el) {
+      el.remove();
+    });
+  }
+
+  // 脚本位于 <head>，备案节点尚未解析；监听后续插入，出现即删除，避免闪烁。
+  new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      Array.prototype.forEach.call(mutation.addedNodes, function (node) {
+        if (node.nodeType !== 1) return;
+        if (node.classList && node.classList.contains('beian')) {
+          node.remove();
+        } else if (node.querySelector) {
+          removeBeian(node);
+        }
+      });
+    });
+  }).observe(document.documentElement, { childList: true, subtree: true });
+
+  // 兜底：DOM 解析完成后再清理一次。
+  document.addEventListener('DOMContentLoaded', function () { removeBeian(); });
+})();
+</script>
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
